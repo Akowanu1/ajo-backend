@@ -26,25 +26,25 @@ async function seedDatabase() {
   // Basic sample users for testing login and role checks.
   const sampleUsers = [
     {
-      name: 'Alice Johnson',
-      email: 'alice@example.com',
-      password: 'Password123',
+      name: 'Random Guy',
+      email: 'randomguy@example.com',
+      password: 'Password123***',
       role: 'admin',
       isVerified: true,
       status: 'active',
     },
     {
-      name: 'Ben Smith',
-      email: 'ben@example.com',
-      password: 'Password123',
+      name: 'John Doe',
+      email: 'johndoe@example.com',
+      password: 'Password123***',
       role: 'member',
       isVerified: true,
       status: 'active',
     },
     {
-      name: 'Cara Lee',
-      email: 'cara@example.com',
-      password: 'Password123',
+      name: 'Jane Doe',
+      email: 'janedoe@example.com',
+      password: 'Password123***',
       role: 'member',
       isVerified: false,
       status: 'pending',
@@ -68,8 +68,11 @@ async function seedDatabase() {
       name: 'Open Project Team',
       description: 'Open group accepting new members.',
       status: 'open',
-      creator: usersByEmail['alice@example.com']._id,
-      members: [usersByEmail['alice@example.com']._id, usersByEmail['ben@example.com']._id],
+      creator: usersByEmail['randomguy@example.com']._id,
+      members: [
+        usersByEmail['randomguy@example.com']._id,
+        usersByEmail['johndoe@example.com']._id,
+      ],
       startDate: null,
       endDate: null,
     },
@@ -77,8 +80,8 @@ async function seedDatabase() {
       name: 'Active Sprint Group',
       description: 'In progress and already contributing.',
       status: 'active',
-      creator: usersByEmail['ben@example.com']._id,
-      members: [usersByEmail['ben@example.com']._id, usersByEmail['cara@example.com']._id],
+      creator: usersByEmail['johndoe@example.com']._id,
+      members: [usersByEmail['johndoe@example.com']._id, usersByEmail['janedoe@example.com']._id],
       startDate: new Date(Date.now() - 1000 * 60 * 60 * 24 * 10),
       endDate: null,
     },
@@ -86,8 +89,8 @@ async function seedDatabase() {
       name: 'Completed Group',
       description: 'This group has already finished its work.',
       status: 'completed',
-      creator: usersByEmail['cara@example.com']._id,
-      members: [usersByEmail['cara@example.com']._id, usersByEmail['alice@example.com']._id],
+      creator: usersByEmail['janedoe@example.com']._id,
+      members: [usersByEmail['janedoe@example.com']._id, usersByEmail['randomguy@example.com']._id],
       startDate: new Date(Date.now() - 1000 * 60 * 60 * 24 * 30),
       endDate: new Date(Date.now() - 1000 * 60 * 60 * 24 * 5),
     },
@@ -107,9 +110,9 @@ async function seedDatabase() {
 
   // Show test credentials for the team.
   console.log('Seed complete. Test logins:');
-  console.log(formatLogin('alice@example.com', 'Password123'));
-  console.log(formatLogin('ben@example.com', 'Password123'));
-  console.log(formatLogin('cara@example.com', 'Password123'));
+  console.log(formatLogin('randomguy@example.com', 'Password123***'));
+  console.log(formatLogin('johndoe@example.com', 'Password123***'));
+  console.log(formatLogin('janedoe@example.com', 'Password123***'));
   console.log(`Created ${createdUsers.length} users and ${createdGroups.length} groups.`);
 }
 

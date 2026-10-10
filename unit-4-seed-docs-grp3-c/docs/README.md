@@ -1,4 +1,4 @@
-# Unit 4 Notes
+# Unit 4: Seed data, Postman and testing (Group C)
 
 This folder contains the Unit 4 deliverables for Group C:
 

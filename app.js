@@ -3,6 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import dotenv from "dotenv";
 import connectDb from "./src/config/db.js";
+import { notFound, errorHandler } from './src/middlewares/errorHandler.js';
 
 dotenv.config();
 const app = express();
@@ -10,6 +11,8 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+app.use(notFound);
+app.use(errorHandler);
 
 app.get("/", (req, res) =>
   res.json({ success: true, message: "AJO API is running", data: {} })

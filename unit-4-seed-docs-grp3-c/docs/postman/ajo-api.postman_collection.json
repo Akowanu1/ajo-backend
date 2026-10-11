@@ -33,7 +33,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"alice@example.com\",\n  \"password\": \"Password123\"\n}"
+              "raw": "{\n  \"email\": \"randomguy@example.com\",\n  \"password\": \"Password123***\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/auth/login",

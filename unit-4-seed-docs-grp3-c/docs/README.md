@@ -31,3 +31,9 @@ http://localhost:5000
 ```
 
 The `Login` request stores the JWT token in the `token` variable automatically.
+
+Example seed login values:
+
+- `randomguy@example.com` / `Password123***`
+- `johndoe@example.com` / `Password123***`
+- `janedoe@example.com` / `Password123***`
